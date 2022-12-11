@@ -156,16 +156,15 @@ body{
 
 @media only screen and (max-width: 800px){
     .chessBoard{
-        margin-top: 20px;
         border-collapse: collapse;
         border: 2px solid black;
-        width: 210px;
-        height: 200px;
+        width: 350px;
+        height: 300px;
         box-shadow: 2px 1px 15px grey;
     }
     
     .charId{
-        font-size: 7px;
+        font-size: 10px;
         text-align: center;
         height: 10px;
         background-color:rgb(251, 248, 243);
@@ -181,23 +180,23 @@ body{
     
     .whiteSection{
         text-align: center;
-        height: 20px;
-        width: 20px;
+        height: 35px;
+        width: 35px;
         border: 1px solid black;
         background-color: rgb(249, 237, 223);
     }
     
     .blackSection{
         text-align: center;
-        height: 20px;
-        width: 20px;
+        height: 35px;
+        width: 35px;
         border: 1px solid black;
         background-color: rgb(150, 150, 150);
     }
     
     .deadPiecesBlock{
         height: 100px;
-        margin-top: 30px;
+        margin-top: 5px;
         margin-left: 25px;
         margin-right: 25px;
         right: 50px;
@@ -211,28 +210,28 @@ body{
         height: 20px;
         background-color: white;
         text-align: center;
-        font-size: 7px;
+        font-size: 10px;
     }
     
     .whiteDeadPieces{
         table-layout: fixed;
-        height: 20px;
-        width: 20px;
+        height: 35px;
+        width: 35px;
         border: 1px solid black;
         background-color: rgb(249, 237, 223);
     }
     
     .blackDeadPieces{
         table-layout: fixed;
-        height: 20px;
-        width: 20px;
+        height: 35px;
+        width: 35px;
         border: 1px solid black;
         background-color: rgb(249, 237, 223);
     }
     
     .piecesButton{
-        height: 20px;
-        width: 20px;
+        height: 35px;
+        width: 35px;
         background-color: transparent;
         border: none;
     }
@@ -258,47 +257,47 @@ body{
     
     .sidePlaying{
         position: absolute;
-        top: -2px;
-        left: 40px;
-        width: 50px;
-        height: 15px;
+        top: 30px;
+        left: -5px;
+        width: 80px;
+        height: 20px;
         box-shadow: 2px 1px 10px grey;
         border: 1px solid black;
         text-align: center;
-        font-size: 8px;
+        font-size: 15px;
         font-weight: bold;
         font-family: 'Times New Roman', Times, serif;
     }
 
     .playerPlaying{
         position: absolute;
-        top: 10px;
-        left: 15px;
+        top: 15px;
+        left: 25px;
         text-align: center;
-        font-size: 8px;
+        font-size: 15px;
     }
     
     .swtch{
         position: absolute;
-        top: 5px;
-        right: 80px;
+        top: 80px;
+        right: 30px;
     }
     
     .strt{
         position: absolute;
-        top: 5px;
-        right: 130px;
+        top: 40px;
+        right: 30px;
     }
 
     .resetGame{
         position: absolute;
-        top: 5px;
+        top: 120px;
         right: 30px;
     }
     
     .classButton{
-        width: 40px;
-        height: 15px;
+        width: 80px;
+        height: 25px;
         background-color: burlywood;
         border-radius: 20px;
         box-shadow: 2px 1px 10px grey;
