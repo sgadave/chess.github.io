@@ -254,7 +254,7 @@ function endGame(){
 
 
 function tryAgain(){
-    window.open('../chessboard.html',"_self");
+    window.open('../index.html',"_self");
 }
 
 
