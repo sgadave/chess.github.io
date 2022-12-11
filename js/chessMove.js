@@ -240,7 +240,7 @@ function endGame(){
     if(player=="white"){
        if(defeatedBlackPiecesId.includes("blkking")){
         console.log("Whitewins");
-        window.open('../html/WhiteSideWins.html',"_self");
+        window.open('../whiteSideWins.html',"_self");
        }
     }else{
         if(defeatedWhitePiecesId.includes("whtking")){
