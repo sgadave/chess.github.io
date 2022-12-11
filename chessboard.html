@@ -1,0 +1,497 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/chessstyle.css">
+    <script src="./js/chessMove.js"></script>
+</head>
+
+<body>
+    <div class="chessBody">
+        <!-- place to store defeated pieces of white side -->
+        <table class="deadPiecesBlock">
+            <tr>
+                <td colspan="2" class="deadBlockHeading">
+                    WHITE DEFEATED
+                </td>
+            </tr>
+            <tr>
+                <td class="whiteDeadPieces" id="whiteDeadBlock1"></td>
+                <td class="whiteDeadPieces" id="whiteDeadBlock9"></td>
+            </tr>
+            <tr>
+                <td class="whiteDeadPieces" id="whiteDeadBlock2"></td>
+                <td class="whiteDeadPieces" id="whiteDeadBlock10"></td>
+            </tr>
+            <tr>
+                <td class="whiteDeadPieces" id="whiteDeadBlock3"></td>
+                <td class="whiteDeadPieces" id="whiteDeadBlock11"></td>
+            </tr>
+            <tr>
+                <td class="whiteDeadPieces" id="whiteDeadBlock4"></td>
+                <td class="whiteDeadPieces" id="whiteDeadBlock12"></td>
+            </tr>
+            <tr>
+                <td class="whiteDeadPieces" id="whiteDeadBlock5"></td>
+                <td class="whiteDeadPieces" id="whiteDeadBlock13"></td>
+            </tr>
+            <tr>
+                <td class="whiteDeadPieces" id="whiteDeadBlock6"></td>
+                <td class="whiteDeadPieces" id="whiteDeadBlock14"></td>
+            </tr>
+            <tr>
+                <td class="whiteDeadPieces" id="whiteDeadBlock7"></td>
+                <td class="whiteDeadPieces" id="whiteDeadBlock15"></td>
+            </tr>
+            <tr>
+                <td class="whiteDeadPieces" id="whiteDeadBlock8"></td>
+                <td class="whiteDeadPieces" id="whiteDeadBlock16"></td>
+            </tr>
+        </table>
+        
+        <!-- chess board -->
+        <table class="chessBoard">
+            <tr>
+                <td class="charId"> </td>
+                <td class="charId">
+                    A
+                </td>
+                <td class="charId">
+                    B
+                </td>
+                <td class="charId">
+                    C
+                </td>
+                <td class="charId">
+                    D
+                </td>
+                <td class="charId">
+                    E
+                </td>
+                <td class="charId">
+                    F
+                </td>
+                <td class="charId">
+                    G
+                </td>
+                <td class="charId">
+                    H
+                </td>
+                <td class="charId"> </td>
+            </tr>
+            <tr>
+                <td class="numId">
+                    8
+                </td>
+                <td class="whiteSection" id="parentA8">
+                    <div id="blockA8">
+                        <img src="./svg/blackpieces/rook.svg" alt="Rook" class="piecesButton" id="blkrookl">
+                    </div>
+                </td>
+                <td class="blackSection" id="parentB8">
+                    <div id="blockB8">
+                        <img src="./svg/blackpieces/knight.svg" alt="Knight" class="piecesButton" id="blkknightl">
+                    </div>
+                </td>
+                <td class="whiteSection" id="parentC8">
+                    <div id="blockC8">
+                        <img src="./svg/blackpieces/bishop.svg" alt="Bishop" class="piecesButton" id="blkbishopl">
+                    </div>
+                </td>
+                <td class="blackSection" id="parentD8">
+                    <div id="blockD8">
+                        <img src="./svg/blackpieces/queen.svg" alt="Queen" class="piecesButton" id="blkqueen">
+                    </div>
+                </td>
+                <td class="whiteSection" id="parentE8">
+                    <div id="blockE8">
+                        <img src="./svg/blackpieces/king.svg" alt="King" class="piecesButton" id="blkking">
+
+                    </div>
+                </td>
+                <td class="blackSection" id="parentF8">
+                    <div id="blockF8">
+                        <img src="./svg/blackpieces/bishop.svg" alt="Bishop" class="piecesButton" id="blkbishopr">
+                    </div>
+                </td>
+                <td class="whiteSection" id="parentG8">
+                    <div id="blockG8">
+                        <img src="./svg/blackpieces/knight.svg" alt="Knight" class="piecesButton" id="blkknightr">
+                    </div>
+                </td>
+                <td class="blackSection" id="parentH8">
+                    <div id="blockH8">
+                        <img src="./svg/blackpieces/rook.svg" alt="Rook" class="piecesButton" id="blkrookr">
+                    </div>
+                </td>
+                <td class="numId">
+                    8
+                </td>
+            </tr>
+            <tr>
+                <td class="numId">
+                    7
+                </td>
+                <td class="blackSection" id="parentA7">
+                    <div id="blockA7">
+                        <img src="./svg/blackpieces/pawn.svg" alt="pawn" class="piecesButton" id="blkpwan1">
+                    </div>
+                </td>
+                <td class="whiteSection" id="parentB7">
+                    <div id="blockB7">
+                        <img src="./svg/blackpieces/pawn.svg" alt="pawn" class="piecesButton" id="blkpwan2">
+                    </div>
+                </td>
+                <td class="blackSection" id="parentC7">
+                    <div id="blockC7">
+                        <img src="./svg/blackpieces/pawn.svg" alt="pawn" class="piecesButton" id="blkpwan3">
+                    </div>
+                </td>
+                <td class="whiteSection" id="parentD7">
+                    <div id="blockD7">
+                        <img src="./svg/blackpieces/pawn.svg" alt="pawn" class="piecesButton" id="blkpwan4">
+                    </div>
+                </td>
+                <td class="blackSection" id="parentE7">
+                    <div id="blockE7">
+                        <img src="./svg/blackpieces/pawn.svg" alt="pawn" class="piecesButton" id="blkpwan5">
+                    </div>
+                </td>
+                <td class="whiteSection" id="parentF7">
+                    <div id="blockF7">
+                        <img src="./svg/blackpieces/pawn.svg" alt="pawn" class="piecesButton" id="blkpwan6">
+                    </div>
+                </td>
+                <td class="blackSection" id="parentG7">
+                    <div id="blockG7">
+                        <img src="./svg/blackpieces/pawn.svg" alt="pawn" class="piecesButton" id="blkpwan7">
+                    </div>
+                </td>
+                <td class="whiteSection" id="parentH7">
+                    <div id="blockH7">
+                        <img src="./svg/blackpieces/pawn.svg" alt="pawn" class="piecesButton" id="blkpwan8">
+                    </div>
+                </td>
+                <td class="numId">
+                    7
+                </td>
+            </tr>
+            <tr>
+                <td class="numId">
+                    6
+                </td>
+                <td class="whiteSection" id="parentA6">
+                    <div id="blockA6"></div>
+                </td>
+                <td class="blackSection" id="parentB6">
+                    <div id="blockB6"></div>
+                </td>
+                <td class="whiteSection" id="parentC6">
+                    <div id="blockC6"></div>
+                </td>
+                <td class="blackSection" id="parentD6">
+                    <div id="blockD6"></div>
+                </td>
+                <td class="whiteSection" id="parentE6">
+                    <div id="blockE6"></div>
+                </td>
+                <td class="blackSection" id="parentF6">
+                    <div id="blockF6"></div>
+                </td>
+                <td class="whiteSection" id="parentG6">
+                    <div id="blockG6"></div>
+                </td>
+                <td class="blackSection" id="parentH6">
+                    <div id="blockH6"></div>
+                </td>
+                <td class="numId">
+                    6
+                </td>
+            </tr>
+            <tr>
+                <td class="numId">
+                    5
+                </td>
+                <td class="blackSection" id="parentA5">
+                    <div id="blockA5"></div>
+                </td>
+                <td class="whiteSection" id="parentB5">
+                    <div id="blockB5"></div>
+                </td>
+                <td class="blackSection" id="parentC5">
+                    <div id="blockC5"></div>
+                </td>
+                <td class="whiteSection" id="parentD5">
+                    <div id="blockD5"></div>
+                </td>
+                <td class="blackSection" id="parentE5">
+                    <div id="blockE5"></div>
+                </td>
+                <td class="whiteSection" id="parentF5">
+                    <div id="blockF5"></div>
+                </td>
+                <td class="blackSection" id="parentG5">
+                    <div id="blockG5"></div>
+                </td>
+                <td class="whiteSection" id="parentH5">
+                    <div id="blockH5"></div>
+                </td>
+                <td class="numId">
+                    5
+                </td>
+            </tr>
+            <tr>
+                <td class="numId">
+                    4
+                </td>
+                <td class="whiteSection"  id="parentA4">
+                    <div id="blockA4"></div>
+                </td>
+                <td class="blackSection" id="parentB4">
+                    <div id="blockB4"></div>
+                </td>
+                <td class="whiteSection" id="parentC4">
+                    <div id="blockC4"></div>
+                </td>
+                <td class="blackSection" id="parentD4">
+                    <div id="blockD4"></div>
+                </td>
+                <td class="whiteSection" id="parentE4">
+                    <div id="blockE4"></div>
+                </td>
+                <td class="blackSection" id="parentF4">
+                    <div id="blockF4"></div>
+                </td>
+                <td class="whiteSection" id="parentG4">
+                    <div id="blockG4"></div>
+                </td>
+                <td class="blackSection" id="parentH4">
+                    <div id="blockH4"></div>
+                </td>
+                <td class="numId">
+                    4
+                </td>
+            </tr>
+            <tr>
+                <td class="numId">
+                    3
+                </td>
+                <td class="blackSection" id="parentA3">
+                    <div id="blockA3"></div>
+                </td>
+                <td class="whiteSection" id="parentB3">
+                    <div id="blockB3"></div>
+                </td>
+                <td class="blackSection" id="parentC3">
+                    <div id="blockC3"></div>
+                </td>
+                <td class="whiteSection" id="parentD3">
+                    <div id="blockD3"></div>
+                </td>
+                <td class="blackSection" id="parentE3">
+                    <div id="blockE3"></div>
+                </td>
+                <td class="whiteSection" id="parentF3">
+                    <div id="blockF3"></div>
+                </td>
+                <td class="blackSection" id="parentG3">
+                    <div id="blockG3"></div>
+                </td>
+                <td class="whiteSection" id="parentH3">
+                    <div id="blockH3"></div>
+                </td>
+                <td class="numId">
+                    3
+                </td>
+            </tr>
+            <tr>
+                <td class="numId">
+                    2
+                </td>
+                <td class="whiteSection" id="parentA2">
+                    <div id="blockA2">
+                        <img src="./svg/whitepieces/pawn.svg" alt="pawn" id="whtpwan1" class="piecesButton">
+                    </div>
+                </td>
+                <td class="blackSection" id="parentB2">
+                    <div id="blockB2">
+                        <img src="./svg/whitepieces/pawn.svg" alt="pawn" id="whtpwan2" class="piecesButton">
+                    </div>
+                </td>
+                <td class="whiteSection" id="parentC2">
+                    <div id="blockC2">
+                        <img src="./svg/whitepieces/pawn.svg" alt="pawn" id="whtpwan3" class="piecesButton">
+                    </div>
+                </td>
+                <td class="blackSection" id="parentD2">
+                    <div id="blockD2">
+                        <img src="./svg/whitepieces/pawn.svg" alt="pawn" id="whtpwan4" class="piecesButton">
+                    </div>
+                </td>
+                <td class="whiteSection" id="parentE2">
+                    <div id="blockE2">
+                        <img src="./svg/whitepieces/pawn.svg" alt="pawn" id="whtpwan5" class="piecesButton">
+                    </div>
+                </td>
+                <td class="blackSection" id="parentF2">
+                    <div id="blockF2">
+                        <img src="./svg/whitepieces/pawn.svg" alt="pawn" id="whtpwan6" class="piecesButton">
+                    </div>
+                </td>
+                <td class="whiteSection" id="parentG2">
+                    <div id="blockG2">
+                        <img src="./svg/whitepieces/pawn.svg" alt="pawn" id="whtpwan7" class="piecesButton">
+                    </div>
+                </td>
+                <td class="blackSection" id="parentH2">
+                    <div id="blockH2">
+                        <img src="./svg/whitepieces/pawn.svg" alt="pawn" id="whtpwan8" class="piecesButton">
+                    </div>
+                </td>
+                <td class="numId">
+                    2
+                </td>
+            </tr>
+            <tr>
+                <td class="numId">
+                    1
+                </td>
+                <td class="blackSection" id="parentA1">
+                    <div id="blockA1">
+                        <img src="./svg/whitepieces/rook.svg" alt="Rook" id="whtrookl" class="piecesButton">
+                    </div>
+                </td>
+                <td class="whiteSection" id="parentB1">
+                    <div id="blockB1">
+                        <img src="./svg/whitepieces/knight.svg" alt="Knight" id="whtknightl" class="piecesButton">
+                    </div>
+                </td>
+                <td class="blackSection" id="parentC1">
+                    <div id="blockC1">
+                        <img src="./svg/whitepieces/bishop.svg" alt="Bishop" id="whtbishopl" class="piecesButton">
+                    </div>
+                </td>
+                <td class="whiteSection" id="parentD1">
+                    <div id="blockD1">
+                        <img src="./svg/whitepieces/queen.svg" alt="Queen" id="whtqueen" class="piecesButton">
+                    </div>
+                </td>
+                <td class="blackSection" id="parentE1">
+                    <div id="blockE1">
+                        <img src="./svg/whitepieces/king.svg" alt="King" id="whtking" class="piecesButton">
+                    </div>
+                </td>
+                <td class="whiteSection" id="parentF1">
+                    <div id="blockF1">
+                        <img src="./svg/whitepieces/bishop.svg" alt="bishop" id="whtbishopr" class="piecesButton">
+                    </div>
+                </td>
+                <td class="blackSection" id="parentG1">
+                    <div id="blockG1">
+                        <img src="./svg/whitepieces/knight.svg" alt="Knight" id="whtknightr" class="piecesButton">
+                    </div>
+                </td>
+                <td class="whiteSection" id="parentH1">
+                    <div id="blockH1">
+                        <img src="./svg/whitepieces/rook.svg" alt="Rook" id="whtrookr" class="piecesButton">
+                    </div>
+                </td>
+                <td class="numId">
+                    1
+                </td>
+            </tr>
+            <tr>
+                <td class="charId"> </td>
+                <td class="charId">
+                    A
+                </td>
+                <td class="charId">
+                    B
+                </td>
+                <td class="charId">
+                    C
+                </td>
+                <td class="charId">
+                    D
+                </td>
+                <td class="charId">
+                    E
+                </td>
+                <td class="charId">
+                    F
+                </td>
+                <td class="charId">
+                    G
+                </td>
+                <td class="charId">
+                    H
+                </td>
+                <td class="charId"> </td>
+            </tr>
+        </table>
+
+        <!-- place to store defeated pieces of black side -->
+        <table class="deadPiecesBlock">
+            <tr>
+                <td colspan="2" class="deadBlockHeading">
+                    BLACK DEFEATED
+                </td>
+            </tr>
+            <tr>
+                <td class="blackDeadPieces" id="blackDeadBlock1"></td>
+                <td class="blackDeadPieces" id="blackDeadBlock9"></td>
+            </tr>
+            <tr>
+                <td class="blackDeadPieces" id="blackDeadBlock2"></td>
+                <td class="blackDeadPieces" id="blackDeadBlock10"></td>
+            </tr>
+            <tr>
+                <td class="blackDeadPieces" id="blackDeadBlock3"></td>
+                <td class="blackDeadPieces" id="blackDeadBlock11"></td>
+            </tr>
+            <tr>
+                <td class="blackDeadPieces" id="blackDeadBlock4"></td>
+                <td class="blackDeadPieces" id="blackDeadBlock12"></td>
+            </tr>
+            <tr>
+                <td class="blackDeadPieces" id="blackDeadBlock5"></td>
+                <td class="blackDeadPieces" id="blackDeadBlock13"></td>
+            </tr>
+            <tr>
+                <td class="blackDeadPieces" id="blackDeadBlock6"></td>
+                <td class="blackDeadPieces" id="blackDeadBlock14"></td>
+            </tr>
+            <tr>
+                <td class="blackDeadPieces" id="blackDeadBlock7"></td>
+                <td class="blackDeadPieces" id="blackDeadBlock15"></td>
+            </tr>
+            <tr>
+                <td class="blackDeadPieces" id="blackDeadBlock8"></td>
+                <td class="blackDeadPieces" id="blackDeadBlock16"></td>
+            </tr>
+        </table>
+        <div class="strt">
+            <button type="button" id="start" class="classButton" onclick="selectPlayer()">
+                START GAME
+            </button>
+        </div>
+        <div class="swtch">
+            <button id="switch" class="classButton" >
+                PASS MOVE
+            </button>
+        </div>
+        <br>
+        <div class="playerPlaying">
+            PLAYER <br>
+            <input type="text" id="playerPlaying" class="sidePlaying" readonly>
+        </div>
+        <div class="resetGame">
+            <button id="resetGm" class="classButton" onclick="restartGame()">
+                RESTART
+            </button>
+        </div>
+    </div>
+
+</body>
+
+</html>
