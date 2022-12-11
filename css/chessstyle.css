@@ -154,10 +154,7 @@ body{
     right: 30px;
 }
 
-@media only screen and (max-width: 800px) and (orientation:portrait){
-    body{
-        transform:rotate(90deg);
-    }
+@media only screen and (max-width: 800px){
     .chessBoard{
         border-collapse: collapse;
         border: 2px solid black;
