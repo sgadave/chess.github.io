@@ -276,6 +276,7 @@ function switchPlayer(ev) {
     selectPlayer();
     if (ev == '1') {
         clearSelectionData();
+        pawnFirstMove.pop();
     }
 }//function ends here
 
@@ -1247,13 +1248,13 @@ function pawnPathIdGenerator(blockId) {
                         genIdElement = document.getElementById(genIdStr);
                         if (genIdElement.childElementCount == 0) {
                             pathBlockIds.push(genIdStr);
-                            pawnFirstMove.push(selectedPieceId);
                         }
                     }
                 }//intId if ends here
             }//charAscii if endh here
             movecount++
         }
+         pawnFirstMove.push(selectedPieceId);
     } else {
         //check if there are any opposing element to forward left side of selected pawn
         if (player == "white") {
