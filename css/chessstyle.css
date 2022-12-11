@@ -154,7 +154,7 @@ body{
     right: 30px;
 }
 
-/* @media only screen and (max-width: 800px){
+@media only screen and (max-width: 800px){
     .chessBoard{
         margin-top: 20px;
         border-collapse: collapse;
@@ -309,4 +309,4 @@ body{
         animation: press 0.25s;
     }
     
-} */
+}
