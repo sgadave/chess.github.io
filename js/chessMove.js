@@ -245,7 +245,7 @@ function endGame(){
     }else{
         if(defeatedWhitePiecesId.includes("whtking")){
             console.log("Blackwins");
-            window.open('../html/blackSideWins.html',"_self");
+            window.open('../blackSideWins.html',"_self");
         }
 
     }//if ends here
@@ -254,7 +254,7 @@ function endGame(){
 
 
 function tryAgain(){
-    window.open('../html/chessboard.html',"_self");
+    window.open('../chessboard.html',"_self");
 }
 
 
@@ -1247,6 +1247,8 @@ function pawnPathIdGenerator(blockId) {
                     if (genIdStr != blockId) {
                         genIdElement = document.getElementById(genIdStr);
                         if (genIdElement.childElementCount == 0) {
+                           movecount=2;
+                        }else{
                             pathBlockIds.push(genIdStr);
                         }
                     }
