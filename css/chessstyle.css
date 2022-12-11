@@ -154,7 +154,10 @@ body{
     right: 30px;
 }
 
-@media only screen and (max-width: 800px){
+@media only screen and (max-width: 800px) and (orientation:portrait){
+    body{
+        transform:rotate(90deg);
+    }
     .chessBoard{
         border-collapse: collapse;
         border: 2px solid black;
@@ -301,7 +304,7 @@ body{
         background-color: burlywood;
         border-radius: 20px;
         box-shadow: 2px 1px 10px grey;
-        font-size: 5px;
+        font-size: 10px;
     }
     
     .classButton:active{
