@@ -1246,8 +1246,8 @@ function pawnPathIdGenerator(blockId) {
                     console.log("Concat id :----" + genIdStr);
                     if (genIdStr != blockId) {
                         genIdElement = document.getElementById(genIdStr);
-                        if (genIdElement.childElementCount == 0) {
-                           movecount=2;
+                        if (genIdElement.childElementCount != 0) {
+                           movecount=2
                         }else{
                             pathBlockIds.push(genIdStr);
                         }
