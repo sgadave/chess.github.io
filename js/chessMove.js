@@ -240,14 +240,14 @@ function endGame(){
     if(player=="white"){
        if(defeatedBlackPiecesId.includes("blkking")){
         console.log("Whitewins");
-           window.location.href="https://sgadave.github.io/chess.github.io/whiteSideWins.html";
-//        window.open('chess.github.io/html/whiteSideWins.html',"_self");
+        //   window.location.href="https://sgadave.github.io/chess.github.io/whiteSideWins.html";
+       window.open('../html/whiteSideWins.html',"_self");
        }
     }else{
         if(defeatedWhitePiecesId.includes("whtking")){
             console.log("Blackwins");
-            window.location.href="https://sgadave.github.io/chess.github.io/blackSideWins.html";
-//             window.open('chess.github.io/html/blackSideWins.html',"_self");
+          //  window.location.href="https://sgadave.github.io/chess.github.io/blackSideWins.html";
+             window.open('../html/blackSideWins.html',"_self");
         }
 
     }//if ends here
@@ -256,8 +256,8 @@ function endGame(){
 
 
 function tryAgain(){
-    window.location.href="https://sgadave.github.io/chess.github.io/"
-//    window.open('../index.html',"_self");
+//     window.location.href="https://sgadave.github.io/chess.github.io/"
+   window.open('../index.html',"_self");
 }
 
 
