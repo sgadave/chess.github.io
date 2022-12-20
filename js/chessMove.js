@@ -256,7 +256,8 @@ function endGame(){
 
 
 function tryAgain(){
-    window.open('../index.html',"_self");
+    window.location.href="https://sgadave.github.io/chess.github.io/"
+//    window.open('../index.html',"_self");
 }
 
 
