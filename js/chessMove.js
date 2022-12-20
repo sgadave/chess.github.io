@@ -240,12 +240,12 @@ function endGame(){
     if(player=="white"){
        if(defeatedBlackPiecesId.includes("blkking")){
         console.log("Whitewins");
-        window.open('../chess.github.io/whiteSideWins.html',"_self");
+        window.open('chess.github.io/html/whiteSideWins.html',"_self");
        }
     }else{
         if(defeatedWhitePiecesId.includes("whtking")){
             console.log("Blackwins");
-            window.open('../chess.github.io/blackSideWins.html',"_self");
+            window.open('chess.github.io/html/blackSideWins.html',"_self");
         }
 
     }//if ends here
