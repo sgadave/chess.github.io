@@ -3,9 +3,13 @@
 //Ids for chess pieces of both black and white side
 let whiteChessPiecesId = ["whtrookl", "whtknightl", "whtbishopl", "whtqueen", "whtking", "whtbishopr", "whtknightr", "whtrookr", "whtpwan1", "whtpwan2", "whtpwan3", "whtpwan4", "whtpwan5", "whtpwan6", "whtpwan7", "whtpwan8"]//
 let blackChessPiecesId = ["blkrookl", "blkknightl", "blkbishopl", "blkqueen", "blkking", "blkbishopr", "blkknightr", "blkrookr", "blkpwan1", "blkpwan2", "blkpwan3", "blkpwan4", "blkpwan5", "blkpwan6", "blkpwan7", "blkpwan8"]// 
+let MoveBlockHistory = [];
+let MovePieceHistory = [];
+
 
 //Declaring a Global variable for storing Id of Selected Piece
 let selectedPieceId;
+let selectedPieceBlock;
 
 //Declaring a Global variable for storing State of selected piece and default value false
 let selectedPieceState = false;
@@ -78,6 +82,7 @@ function selectChessPiece(pieceId) {
             console.log("Selected Piece is NOT DEFINED");
             //setting global variable for selected piece id
             selectedPieceId = pieceId.id;
+            selectedPieceBlock=document.getElementById(pieceId.id).parentElement.id;
             console.log("Selected Piece Id:------" + selectedPieceId);
             selectedPieceState = true;
             console.log("Select Piece State : -----" + selectedPieceState);
@@ -120,6 +125,15 @@ function highlightValidPath() {
     }
 }//function ended here
 
+function moveUndo(){
+    if(MoveBlockHistory.length!=0){
+        let undoBlockId=MoveBlockHistory.pop()
+        let node = MovePieceHistory.pop();
+        console.log("Undo Block Id-------"+undoBlockId);
+        document.getElementById(undoBlockId).appendChild(node);
+    }
+}
+
 
 
 //Function to remove piece from current block and add it to the selected block
@@ -142,21 +156,31 @@ function moveChessPiece(parentBlockId) {
             defeatOpposingPiece(parentBlockId.id);
             //after removing opposing chess piece move the chess piece
             document.getElementById(parentBlockId.id).children[0].appendChild(node);
+            MoveBlockHistory.push(selectedPieceBlock);
+            MovePieceHistory.push(node);
+            document.getElementById("MovePlay").value=player+"-"+document.getElementById(parentBlockId.id).children[0].id
             movedPiece = true;
         } else if (blockChild != undefined && blackChessPiecesId.includes(blockChild.id) && player == "white") {
             //calling function to remove opposing piece
             defeatOpposingPiece(parentBlockId.id);
             //after removing opposing chess piece move the chess piece
             document.getElementById(parentBlockId.id).children[0].appendChild(node);
+            MoveBlockHistory.push(selectedPieceBlock);
+            MovePieceHistory.push(node);
+            document.getElementById("MovePlay").value=player+"-"+document.getElementById(parentBlockId.id).children[0].id
             movedPiece = true;
         } else {
             //if there is no child in block then move the piece
             document.getElementById(parentBlockId.id).children[0].appendChild(node);
+            MoveBlockHistory.push(selectedPieceBlock);
+            MovePieceHistory.push(node);
+            document.getElementById("MovePlay").value=player+"-"+document.getElementById(parentBlockId.id).children[0].id
             movedPiece = true;
         }//main if ends here
     }
     //Reseting the selection and switching the player
     console.log("movedPiece-------------" + movedPiece);
+    console.log("movedPieceHistory-------------" + MoveBlockHistory);
     if (movedPiece) {
         //clear data related to selected chess piece
         clearSelectionData();
@@ -208,6 +232,7 @@ function clearSelectionData() {
     kingCheck();
     pathBlockIds = [];
     selectedPieceId = undefined;
+    selectedPieceBlock = undefined;
     selectedPieceState = false;
 }//function ends here
 

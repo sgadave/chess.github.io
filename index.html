@@ -485,9 +485,20 @@
             PLAYER <br>
             <input type="text" id="playerPlaying" class="sidePlaying" readonly>
         </div>
+
+        <div class="MovePlaying">
+            Move Played <br>
+            <input type="text" id="MovePlay" class="MovePlayed" readonly>
+        </div>
+
         <div class="resetGame">
             <button id="resetGm" class="classButton" onclick="restartGame()">
                 RESTART
+            </button>
+        </div>
+        <div class="UndoMove">
+            <button id="undoMv" class="classButton" onclick="moveUndo()">
+                UNDO MOVE
             </button>
         </div>
     </div>

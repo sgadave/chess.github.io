@@ -124,6 +124,25 @@ body{
     font-size: 25px;
 }
 
+.MovePlaying{
+    position: absolute;
+    top: 150px;
+    left: 15px;
+    text-align: center;
+    font-size: 25px;
+}
+
+.MovePlayed{
+    width: 175px;
+    height: 50px;
+    box-shadow: 2px 1px 10px grey;
+    border: 1px solid black;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+}
+
 .swtch{
     position: absolute;
     top: 105px;
@@ -151,6 +170,12 @@ body{
 .resetGame{
     position: absolute;
     top: 160px;
+    right: 30px;
+}
+
+.UndoMove{
+    position: absolute;
+    top: 215px;
     right: 30px;
 }
 
@@ -276,6 +301,29 @@ body{
         text-align: center;
         font-size: 15px;
     }
+
+
+    .MovePlayed{
+        position: absolute;
+        top: 30px;
+        left: -5px;
+        width: 100px;
+        height: 20px;
+        box-shadow: 2px 1px 10px grey;
+        border: 1px solid black;
+        text-align: center;
+        font-size: 15px;
+        font-weight: bold;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    .MovePlaying{
+        position: absolute;
+        top: 80px;
+        left: 25px;
+        text-align: center;
+        font-size: 15px;
+    }
     
     .swtch{
         position: absolute;
@@ -292,6 +340,12 @@ body{
     .resetGame{
         position: absolute;
         top: 120px;
+        right: 30px;
+    }
+
+    .UndoMove{
+        position: absolute;
+        top: 160px;
         right: 30px;
     }
     
