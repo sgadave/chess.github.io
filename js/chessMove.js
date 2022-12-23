@@ -171,6 +171,27 @@ function moveChessPiece(parentBlockId) {
 }//function Ends Here
 
 
+function kingCheck(){
+    generatePathBlockIds();
+    let blackKing = "blkking";
+    let whiteKing = "whtking";
+    console.log("Selected Piece After Moving----"+selectedPieceId);
+    for(let kingId of pathBlockIds){
+        console.log("King Id-----------"+kingId)
+        let blockChild=document.getElementById(kingId).children[0];
+        console.log("King Block Chilc Id------"+blockChild);
+        if(blockChild!=undefined){
+            if(blockChild.id==blackKing){
+                alert("White Player Checks Black Player");
+            }
+            if(blockChild.id==whiteKing){
+                alert("Black Player Checks white Player");
+            }
+        }
+    }
+}
+
+
 //function to clear data related to piece selection
 function clearSelectionData() {
     console.log("-------In Clear Selection Data function-------")
@@ -183,6 +204,8 @@ function clearSelectionData() {
     document.getElementById(selectedPieceId).classList.remove("selectedPiece")
     //remove onclick to pass Move button
     document.getElementById("switch").removeAttribute("onclick");
+    pathBlockIds = [];
+    kingCheck();
     pathBlockIds = [];
     selectedPieceId = undefined;
     selectedPieceState = false;
