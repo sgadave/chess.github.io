@@ -154,7 +154,7 @@ body{
     right: 30px;
 }
 
-@media only screen and (max-width: 800px){
+@media only screen and (max-width: 1080px){
     .chessBoard{
         border-collapse: collapse;
         border: 2px solid black;
