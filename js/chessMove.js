@@ -6,7 +6,6 @@ let blackChessPiecesId = ["blkrookl", "blkknightl", "blkbishopl", "blkqueen", "b
 let MoveBlockHistory = [];
 let MovePieceHistory = [];
 
-
 //Declaring a Global variable for storing Id of Selected Piece
 let selectedPieceId;
 let selectedPieceBlock;
@@ -82,7 +81,7 @@ function selectChessPiece(pieceId) {
             console.log("Selected Piece is NOT DEFINED");
             //setting global variable for selected piece id
             selectedPieceId = pieceId.id;
-            selectedPieceBlock=document.getElementById(pieceId.id).parentElement.id;
+            selectedPieceBlock = document.getElementById(pieceId.id).parentElement.id;
             console.log("Selected Piece Id:------" + selectedPieceId);
             selectedPieceState = true;
             console.log("Select Piece State : -----" + selectedPieceState);
@@ -125,13 +124,18 @@ function highlightValidPath() {
     }
 }//function ended here
 
-function moveUndo(){
-    if(MoveBlockHistory.length!=0){
-        let undoBlockId=MoveBlockHistory.pop()
+
+function moveUndo() {
+
+    if (MoveBlockHistory.length != 0) {
+        let undoBlockId = MoveBlockHistory.pop()
         let node = MovePieceHistory.pop();
-        console.log("Undo Block Id-------"+undoBlockId);
+        console.log("Undo Block Id-------" + undoBlockId);
         document.getElementById(undoBlockId).appendChild(node);
+        switchPlayer();
     }
+    document.getElementById("MovePlay").value = "";
+    document.getElementById("playerPlaying").value = player.toUpperCase();
 }
 
 
@@ -158,7 +162,7 @@ function moveChessPiece(parentBlockId) {
             document.getElementById(parentBlockId.id).children[0].appendChild(node);
             MoveBlockHistory.push(selectedPieceBlock);
             MovePieceHistory.push(node);
-            document.getElementById("MovePlay").value=player+"-"+document.getElementById(parentBlockId.id).children[0].id
+            document.getElementById("MovePlay").value = player + "-" + document.getElementById(parentBlockId.id).children[0].id
             movedPiece = true;
         } else if (blockChild != undefined && blackChessPiecesId.includes(blockChild.id) && player == "white") {
             //calling function to remove opposing piece
@@ -167,14 +171,14 @@ function moveChessPiece(parentBlockId) {
             document.getElementById(parentBlockId.id).children[0].appendChild(node);
             MoveBlockHistory.push(selectedPieceBlock);
             MovePieceHistory.push(node);
-            document.getElementById("MovePlay").value=player+"-"+document.getElementById(parentBlockId.id).children[0].id
+            document.getElementById("MovePlay").value = player + "-" + document.getElementById(parentBlockId.id).children[0].id
             movedPiece = true;
         } else {
             //if there is no child in block then move the piece
             document.getElementById(parentBlockId.id).children[0].appendChild(node);
             MoveBlockHistory.push(selectedPieceBlock);
             MovePieceHistory.push(node);
-            document.getElementById("MovePlay").value=player+"-"+document.getElementById(parentBlockId.id).children[0].id
+            document.getElementById("MovePlay").value = player + "-" + document.getElementById(parentBlockId.id).children[0].id
             movedPiece = true;
         }//main if ends here
     }
@@ -195,20 +199,20 @@ function moveChessPiece(parentBlockId) {
 }//function Ends Here
 
 
-function kingCheck(){
+function kingCheck() {
     generatePathBlockIds();
     let blackKing = "blkking";
     let whiteKing = "whtking";
-    console.log("Selected Piece After Moving----"+selectedPieceId);
-    for(let kingId of pathBlockIds){
-        console.log("King Id-----------"+kingId)
-        let blockChild=document.getElementById(kingId).children[0];
-        console.log("King Block Chilc Id------"+blockChild);
-        if(blockChild!=undefined){
-            if(blockChild.id==blackKing){
+    console.log("Selected Piece After Moving----" + selectedPieceId);
+    for (let kingId of pathBlockIds) {
+        console.log("King Id-----------" + kingId)
+        let blockChild = document.getElementById(kingId).children[0];
+        console.log("King Block Chilc Id------" + blockChild);
+        if (blockChild != undefined) {
+            if (blockChild.id == blackKing) {
                 alert("White Player Checks Black Player");
             }
-            if(blockChild.id==whiteKing){
+            if (blockChild.id == whiteKing) {
                 alert("Black Player Checks white Player");
             }
         }
@@ -281,19 +285,19 @@ function defeatOpposingPiece(parentBlockId) {
 
 
 //declaring an array to store defeated pieces Id
-let defeatedWhitePiecesId=[]
-let defeatedBlackPiecesId=[]
+let defeatedWhitePiecesId = []
+let defeatedBlackPiecesId = []
 
-function endGame(){
-    if(player=="white"){
-       if(defeatedBlackPiecesId.includes("blkking")){
-        console.log("Whitewins");
-       window.open('./html/whiteSideWins.html',"_self");
-       }
-    }else{
-        if(defeatedWhitePiecesId.includes("whtking")){
+function endGame() {
+    if (player == "white") {
+        if (defeatedBlackPiecesId.includes("blkking")) {
+            console.log("Whitewins");
+            window.open('./html/whiteSideWins.html', "_self");
+        }
+    } else {
+        if (defeatedWhitePiecesId.includes("whtking")) {
             console.log("Blackwins");
-             window.open('./html/blackSideWins.html',"_self");
+            window.open('./html/blackSideWins.html', "_self");
         }
 
     }//if ends here
@@ -301,9 +305,9 @@ function endGame(){
 }//function Ends here
 
 
-function tryAgain(){
+function tryAgain() {
     // window.location.href="https://sgadave.github.io/chess.github.io/"
-   window.open('../index.html',"_self");
+    window.open('../index.html', "_self");
 }
 
 
@@ -1045,15 +1049,15 @@ function kingPathIdGenerator(blockId) {
 
     //parsing the string type num to integer type
     let intId = parseInt(pieceBlockIdnum);
-    let KingPathcount=0
+    let KingPathcount = 0
     let genIdStr;
     let genIdElement;
 
-    
+
     //Forward move
     intId = intId + 1;
     charAscii = charAscii - 1;
-    while (KingPathcount<3){
+    while (KingPathcount < 3) {
         if (charAscii >= 65 && charAscii <= 72) {
             if (intId > 0 && intId <= 8) {
                 genIdStr = "block" + String.fromCharCode(charAscii) + intId;
@@ -1070,7 +1074,7 @@ function kingPathIdGenerator(blockId) {
                                 pathBlockIds.push(genIdStr);
                             }
                         }
-                    }else{
+                    } else {
                         if (!pathBlockIds.includes(genIdStr)) {
                             pathBlockIds.push(genIdStr);
                         }
@@ -1085,10 +1089,10 @@ function kingPathIdGenerator(blockId) {
     //left Side moves
     charAscii = pieceBlockIdchar.charCodeAt(0);
     intId = parseInt(pieceBlockIdnum);
-    KingPathcount=0;
+    KingPathcount = 0;
     intId = intId - 1;
     charAscii = charAscii - 1;
-    while (KingPathcount<3){
+    while (KingPathcount < 3) {
         if (charAscii >= 65 && charAscii <= 72) {
             if (intId > 0 && intId <= 8) {
                 genIdStr = "block" + String.fromCharCode(charAscii) + intId;
@@ -1105,7 +1109,7 @@ function kingPathIdGenerator(blockId) {
                                 pathBlockIds.push(genIdStr);
                             }
                         }
-                    }else{
+                    } else {
                         if (!pathBlockIds.includes(genIdStr)) {
                             pathBlockIds.push(genIdStr);
                         }
@@ -1121,10 +1125,10 @@ function kingPathIdGenerator(blockId) {
     //right Side moves
     charAscii = pieceBlockIdchar.charCodeAt(0);
     intId = parseInt(pieceBlockIdnum);
-    KingPathcount=0;
+    KingPathcount = 0;
     intId = intId - 1;
     charAscii = charAscii + 1;
-    while (KingPathcount<3){
+    while (KingPathcount < 3) {
         if (charAscii >= 65 && charAscii <= 72) {
             if (intId > 0 && intId <= 8) {
                 genIdStr = "block" + String.fromCharCode(charAscii) + intId;
@@ -1141,7 +1145,7 @@ function kingPathIdGenerator(blockId) {
                                 pathBlockIds.push(genIdStr);
                             }
                         }
-                    }else{
+                    } else {
                         if (!pathBlockIds.includes(genIdStr)) {
                             pathBlockIds.push(genIdStr);
                         }
@@ -1157,10 +1161,10 @@ function kingPathIdGenerator(blockId) {
     //Backward move
     charAscii = pieceBlockIdchar.charCodeAt(0);
     intId = parseInt(pieceBlockIdnum);
-    KingPathcount=0;
+    KingPathcount = 0;
     intId = intId - 1;
     charAscii = charAscii - 1;
-    while (KingPathcount<3){
+    while (KingPathcount < 3) {
         if (charAscii >= 65 && charAscii <= 72) {
             if (intId > 0 && intId <= 8) {
                 genIdStr = "block" + String.fromCharCode(charAscii) + intId;
@@ -1177,7 +1181,7 @@ function kingPathIdGenerator(blockId) {
                                 pathBlockIds.push(genIdStr);
                             }
                         }
-                    }else{
+                    } else {
                         if (!pathBlockIds.includes(genIdStr)) {
                             pathBlockIds.push(genIdStr);
                         }
@@ -1296,8 +1300,8 @@ function pawnPathIdGenerator(blockId) {
                     if (genIdStr != blockId) {
                         genIdElement = document.getElementById(genIdStr);
                         if (genIdElement.childElementCount != 0) {
-                           movecount=2
-                        }else{
+                            movecount = 2
+                        } else {
                             pathBlockIds.push(genIdStr);
                         }
                     }
@@ -1305,7 +1309,7 @@ function pawnPathIdGenerator(blockId) {
             }//charAscii if endh here
             movecount++
         }
-         pawnFirstMove.push(selectedPieceId);
+        pawnFirstMove.push(selectedPieceId);
     } else {
         //check if there are any opposing element to forward left side of selected pawn
         if (player == "white") {
